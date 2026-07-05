@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+/* Design tokens. Tailwind v4 turns these into utilities automatically,
+   e.g. --color-clay -> bg-clay / text-clay, --font-display -> font-display. */
+@theme {
+  --color-sand-50: #faf7f2;
+  --color-sand-100: #f4ede2;
+  --color-sand-200: #e8dcc9;
+  --color-sand-300: #d9c7ab;
+  --color-clay: #b0674c;
+  --color-clay-dark: #8f4f38;
+  --color-sage: #7d8a70;
+  --color-charcoal: #2f2b26;
+  --color-muted: #6b6157;
+
+  --font-display: 'Inter', Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', Arial, ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor targets so the sticky header doesn't cover section titles. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-sand-50);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}

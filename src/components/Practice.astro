@@ -1,0 +1,31 @@
+---
+import { site } from '../lib/content';
+const { practice, media } = site;
+---
+
+<section id="practice" class="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+  <div class="grid items-center gap-12 lg:grid-cols-2">
+    <div>
+      <h2 class="text-3xl font-semibold text-charcoal sm:text-4xl">{practice.heading}</h2>
+      <p class="mt-5 text-lg leading-relaxed text-muted">{practice.intro}</p>
+      <ul class="mt-8 space-y-4">
+        {
+          practice.points.map((point) => (
+            <li class="flex gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-clay"></span>
+              <span class="text-charcoal">{point}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="overflow-hidden rounded-2xl border border-sand-200 shadow-sm">
+      <img
+        src={media.practice_image}
+        alt="A glimpse of practice at the shala"
+        class="h-full w-full object-cover"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>

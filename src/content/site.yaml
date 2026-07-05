@@ -1,0 +1,221 @@
+# =============================================================================
+#  YOUR WEBSITE CONTENT
+#  -----------------------------------------------------------------------------
+#  This is the ONLY file you need to edit to keep the website up to date.
+#  Change the text between the quotes. Keep the words in front of the colon
+#  (labels like `heading:` or `price:`) exactly as they are.
+#
+#  Tips:
+#    - Always keep the spacing/indentation the same as the surrounding lines.
+#    - Text with special characters is safest wrapped in "double quotes".
+#    - Dates must be written as YEAR-MONTH-DAY, e.g. 2026-07-11.
+#    - After you save, the website rebuilds automatically in about a minute.
+# =============================================================================
+
+# ---- Basic identity ----------------------------------------------------------
+site_name: "Crow Song Ashtanga Yoga Shala"   # your shala's name (shown in the header)
+tagline: "Ashtanga Vinyasa yoga in a small shala in Vancouver, BC"
+location_short: "Vancouver, BC"
+
+# ---- Top navigation links (keep this short) ----------------------------------
+nav:
+  - { label: "Practice", href: "#practice" }
+  - { label: "Schedule", href: "#schedule" }
+  - { label: "Teacher", href: "#teacher" }
+  - { label: "Rates", href: "#rates" }
+  - { label: "Visit", href: "#visit" }
+
+# ---- Hero (the big welcome at the top) ---------------------------------------
+hero:
+  heading: "Welcome Every Body"
+  subheading: >-
+    Curious about Ashtanga yoga? Ready to deepen your practice and your
+    connection with yourself? Join us.
+  cta_label: "New students welcome"
+  cta_href: "#visit"
+
+# ---- The Practice ------------------------------------------------------------
+practice:
+  heading: "The Practice"
+  intro: >-
+    We practise Ashtanga Vinyasa Yoga (Primary and Intermediate Series) in a
+    small shala at 156 E 7th Ave, Vancouver. We meet in the early hours,
+    5:45 - 8:15 am, Monday to Friday, and every second Saturday. Alongside the
+    asana practice, you'll learn pranayama and therapeutic techniques to support
+    your health and longevity.
+  points:
+    - "Taught one-to-one within a shared, quiet room, at your own pace."
+    - "A daily rhythm that builds strength, steadiness and calm."
+    - "Suitable for complete beginners and seasoned practitioners alike."
+    - "The teacher is present to guide, adjust and support, never to rush you."
+
+# ---- Schedule ----------------------------------------------------------------
+# The website reads the values below to show a live "Today at the shala" banner.
+# You only edit the plain facts here. The clever bits (which Friday it is,
+# whether today is a moon rest day) are worked out automatically.
+schedule:
+  heading: "Weekly Schedule"
+  intro: "The shala is open Monday to Friday in the early hours, and every second Saturday."
+  # Times and descriptions for each weekday.
+  days:
+    monday:    { time: "6:00 - 8:15 am", type: "Open Practice (no teacher present)" }
+    tuesday:   { time: "5:45 - 8:15 am", type: "Mysore Practice (teacher facilitated)" }
+    wednesday: { time: "5:45 - 8:15 am", type: "Open Practice" }
+    thursday:  { time: "5:45 - 8:15 am", type: "Open Practice" }
+    friday:    { time: "6:00 - 8:00 am", type: "LED Primary Series / Asana Skill Development + Pranayama" }
+
+  # Fridays alternate between these two, week by week.
+  friday_alternates: ["LED Primary Series", "Asana Skill Development + Pranayama"]
+  # A Friday you KNOW the answer to, so alternation can be counted from it.
+  # NOTE: please confirm which Friday is the LED Primary week and adjust the
+  # date/label below so the "Today" banner shows the correct class.
+  friday_anchor: { date: "2026-07-03", label: "LED Primary Series" }
+
+  # Saturdays: only list the ones that actually run. Add a line per date.
+  # Therapeutic practice runs every second Saturday, 6:00 - 8:00 am.
+  # NOTE: please replace the example dates below with the real Saturdays.
+  saturday_note: "Every second Saturday we gather for therapeutic yoga practices, 6:00 - 8:00 am, with a specific focus for your health and wellbeing."
+  saturday_themes:
+    - { date: "2026-07-18", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-08-01", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-08-15", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+
+  closed_note: "The shala is closed on Sundays."
+
+  # Full & New Moon days are rest days (no class). The list below is pre-filled
+  # with the 2026 full and new moons for Vancouver. Update it each year using
+  # the link (choose Vancouver, and add both Full Moon and New Moon dates).
+  moon_note: >-
+    Full and New Moon days are observed as rest days, when the shala does not
+    operate. They mark the peak and trough of the monthly cycle, and we honour
+    them with rest.
+  moon_days_link: "https://www.timeanddate.com/moon/phases/canada/vancouver"
+  moon_rest_days:
+    - "2026-01-03"   # Full Moon
+    - "2026-01-18"   # New Moon
+    - "2026-02-01"   # Full Moon
+    - "2026-02-17"   # New Moon
+    - "2026-03-03"   # Full Moon
+    - "2026-03-18"   # New Moon
+    - "2026-04-01"   # Full Moon
+    - "2026-04-17"   # New Moon
+    - "2026-05-01"   # Full Moon
+    - "2026-05-16"   # New Moon
+    - "2026-05-31"   # Full Moon
+    - "2026-06-14"   # New Moon
+    - "2026-06-29"   # Full Moon
+    - "2026-07-14"   # New Moon
+    - "2026-07-29"   # Full Moon
+    - "2026-08-12"   # New Moon
+    - "2026-08-27"   # Full Moon
+    - "2026-09-10"   # New Moon
+    - "2026-09-26"   # Full Moon
+    - "2026-10-10"   # New Moon
+    - "2026-10-25"   # Full Moon
+    - "2026-11-08"   # New Moon
+    - "2026-11-24"   # Full Moon
+    - "2026-12-08"   # New Moon
+    - "2026-12-23"   # Full Moon
+
+# ---- Teacher -----------------------------------------------------------------
+teacher:
+  heading: "Your Teacher"
+  name: "christine white"
+  title: "Ashtanga Vinyasa Yoga (Mysore style) & Therapeutic Yoga"
+  bio: >-
+    I'm christine. I've practised yoga for many years, and began Ashtanga
+    Vinyasa in 2016. In 2018 I met Geoff MacKenzie and started practising at
+    First Light Yoga. I completed my 300-hour Ashtanga Yoga Teacher Training in
+    2022, then went on to assist and teach at First Light through 2026. Today I
+    teach Ashtanga Vinyasa in the Mysore style alongside therapeutic yoga, and
+    I'm completing my Diploma in Yoga Therapy at Ajna Yoga College.
+  # Training and certifications (shown as a list under the bio).
+  credentials_heading: "Training & Certifications"
+  credentials:
+    - "First Light Yoga (Geoff MacKenzie) - Ayurveda Dinacharya, 10 Habits, 18 months (Oct 2020 - Nov 2022)"
+    - "Ancient Breath 2.0 - Harmony Slater (2021)"
+    - "Vancouver Island Yoga School - 300-hour Ashtanga (July 2022)"
+    - "First Light Yoga (Geoff MacKenzie) - Advanced Adjustments, 40 hours (Aug 2022)"
+    - "First Light Yoga (Geoff MacKenzie) - Apprenticeship (2022 - 2026)"
+    - "Yoga Education Center (E. Stern, R. Moses) - Pranayama Level 1, 50 hours (March 2023)"
+    - "David & Jelena Yoga - Primary Series Intensive, 40 hours (2023)"
+    - "David & Jelena Yoga - Assisting School, 40 hours (2023)"
+    - "David Swenson - Advanced Yoga Adjustments, 40 hours (April 2023)"
+    - "David Keil - Advanced Ashtanga Assisting, 50 hours (Aug 2023)"
+    - "Yoga Education Center (E. Stern et al.) - Pranayama Level 2, 50 hours (Jan 2024)"
+    - "AJNA Yoga College - IAYT Yoga Therapy (Feb 2024 - present)"
+    - "David Garrigues - 7 Asana Principles, 70 hours (Aug 2024, New Mexico)"
+    - "David Garrigues - Ashtanga Vinyasa Yoga Intensive (Jan - Feb 2026, Thailand)"
+    - "AJNA Yoga College - 300-hour Advanced Teacher of Yoga (March 2026)"
+    - "David Garrigues - Ashtanga Vinyasa Yoga Certification, 6-month (March - Sept 2026)"
+    - "David Garrigues - 70 hours (Aug 2026, New Mexico)"
+  membership: "Member of the Canadian Yoga Alliance - CYA-RYT 500 (April 2026)"
+  # Replace the placeholder image by dropping a photo in public/images/ and
+  # pointing this to it, e.g. "/images/teacher.jpg".
+  image: "/images/teacher-placeholder.svg"
+  image_alt: "Portrait of christine white"
+
+# ---- Rates -------------------------------------------------------------------
+rates:
+  heading: "Rates"
+  intro: "Simple, honest pricing. Practise as little or as often as you like."
+  # For each item: when you have a Square (or other) checkout link, paste it
+  # into checkout_url between the quotes. Until then the button shows
+  # "coming soon". cta_label is the wording shown on the button.
+  items:
+    - { name: "Drop-in", price: "$35", note: "A single morning practice", cta_label: "Pay drop-in", checkout_url: "" }
+    - { name: "One month unlimited", price: "$150 / month", note: "Practise as often as you like", cta_label: "Start monthly", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/WLS2FW5PQM66LUUKZSUQXCD5" }
+  footnote: "Prices are in Canadian dollars, plus 5% GST. Please ask about need-based options."
+
+# ---- Consent & Safety --------------------------------------------------------
+consent:
+  heading: "Consent & Safety"
+  intro: >-
+    Your body is your own. Our shala is built on consent, safety and respect,
+    and hands-on assists are always offered, never assumed.
+  points:
+    - "Consent cards let you signal, silently and at any time, whether assists are welcome that day."
+    - "You are always in charge of your practice, and can decline any adjustment, for any reason."
+    - "A consent and waiver form is signed at the shala."
+    - "Questions and conversations about touch, safety and consent are always welcome."
+
+# ---- Payment (placeholder for now) -------------------------------------------
+payment:
+  heading: "Payment"
+  body: >-
+    Ready to begin? Start a monthly membership online with the button above.
+    For drop-ins, pay in the studio by cash, e-transfer or card, or reach out
+    and we'll help you get started.
+  note: "Secure online payments are handled by Square."
+
+# ---- Visit / Location --------------------------------------------------------
+visit:
+  heading: "Visit"
+  intro: "New students are warmly welcomed. Come as you are, and say hello."
+  address: "156 E 7th Ave, Vancouver, BC V5T 1M5"
+  directions: "Near Main St, a short walk from the Mount Pleasant neighbourhood."
+  email: ""                            # left off for now; add a real email later
+  phone: ""                            # intentionally left blank
+  # Google Maps embed for the address above (no API key needed).
+  map_embed: "https://maps.google.com/maps?q=156%20E%207th%20Ave%2C%20Vancouver%2C%20BC%20V5T%201M5&t=&z=15&ie=UTF8&iwloc=&output=embed"
+
+# ---- Media (images & video placeholders you can replace later) ---------------
+media:
+  # Replace by dropping a file in public/images/ and updating the path here.
+  hero_image: "/images/hero-placeholder.svg"
+  practice_image: "/images/practice-placeholder.svg"
+  # Intro video: leave blank to show the poster placeholder only.
+  # When ready, drop a file in public/videos/ and set e.g. "/videos/intro.mp4".
+  intro_video: ""
+  intro_video_poster: "/images/video-poster-placeholder.svg"
+  intro_video_heading: "A glimpse of the shala"
+  intro_video_caption: "Video coming soon."
+
+# ---- Footer ------------------------------------------------------------------
+footer:
+  tagline: "Traditional Ashtanga Vinyasa yoga in Vancouver, BC."
+  note: ""
+  # Social links shown in the footer. Update the url/handle or remove a line.
+  social:
+    - { label: "Instagram", handle: "@christine.ashtanga", url: "https://instagram.com/christine.ashtanga" }
+    - { label: "YouTube", handle: "@christinewhite-n4r", url: "https://youtube.com/@christinewhite-n4r" }

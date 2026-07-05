@@ -1,0 +1,44 @@
+---
+import { site } from '../lib/content';
+const { teacher } = site;
+---
+
+<section id="teacher" class="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+  <div class="grid items-start gap-12 lg:grid-cols-[2fr_3fr]">
+    <div class="overflow-hidden rounded-2xl border border-sand-200 shadow-sm">
+      <img src={teacher.image} alt={teacher.image_alt} class="h-full w-full object-cover" loading="lazy" />
+    </div>
+    <div>
+      <h2 class="text-3xl font-semibold text-charcoal sm:text-4xl">{teacher.heading}</h2>
+      <p class="mt-4 font-display text-2xl text-clay-dark">{teacher.name}</p>
+      {teacher.title && <p class="mt-1 text-sm font-medium uppercase tracking-wide text-sage">{teacher.title}</p>}
+      <p class="mt-5 text-lg leading-relaxed text-muted">{teacher.bio}</p>
+
+      {
+        teacher.membership && (
+          <p class="mt-5 inline-block rounded-full bg-sand-100 px-4 py-1.5 text-sm font-medium text-charcoal">
+            {teacher.membership}
+          </p>
+        )
+      }
+
+      {
+        teacher.credentials && teacher.credentials.length > 0 && (
+          <details class="mt-6 rounded-xl border border-sand-200 bg-sand-50 p-5">
+            <summary class="cursor-pointer font-display text-lg text-charcoal">
+              {teacher.credentials_heading ?? 'Training & Certifications'}
+            </summary>
+            <ul class="mt-4 space-y-2">
+              {teacher.credentials.map((item) => (
+                <li class="flex gap-3 text-sm text-muted">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-clay" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )
+      }
+    </div>
+  </div>
+</section>

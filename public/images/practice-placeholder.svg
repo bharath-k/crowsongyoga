@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Practice image placeholder">
+  <rect width="1200" height="900" fill="#f4ede2"/>
+  <rect x="30" y="30" width="1140" height="840" fill="none" stroke="#7d8a70" stroke-width="4" stroke-dasharray="16 12" opacity="0.6"/>
+  <circle cx="600" cy="380" r="90" fill="none" stroke="#7d8a70" stroke-width="6" opacity="0.6"/>
+  <text x="600" y="560" font-family="Georgia, serif" font-size="40" fill="#4f5a44" text-anchor="middle">Practice image placeholder</text>
+  <text x="600" y="606" font-family="Arial, sans-serif" font-size="24" fill="#6b6157" text-anchor="middle">Replace: public/images/practice-placeholder.svg</text>
+</svg>

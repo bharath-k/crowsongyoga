@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100" role="img" aria-label="Teacher photo placeholder">
+  <rect width="900" height="1100" fill="#e8dcc9"/>
+  <rect x="24" y="24" width="852" height="1052" fill="none" stroke="#8f4f38" stroke-width="4" stroke-dasharray="16 12" opacity="0.5"/>
+  <circle cx="450" cy="420" r="140" fill="#d9c7ab"/>
+  <path d="M250 820 q200 -260 400 0 z" fill="#d9c7ab"/>
+  <text x="450" y="940" font-family="Georgia, serif" font-size="38" fill="#8f4f38" text-anchor="middle">Teacher photo</text>
+  <text x="450" y="986" font-family="Arial, sans-serif" font-size="22" fill="#6b6157" text-anchor="middle">Replace: public/images/teacher-placeholder.svg</text>
+</svg>

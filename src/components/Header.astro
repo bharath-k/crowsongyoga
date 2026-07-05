@@ -1,0 +1,50 @@
+---
+import { site } from '../lib/content';
+const { site_name, nav } = site;
+---
+
+<header class="sticky top-0 z-50 border-b border-sand-200 bg-sand-50/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <a href="#top" class="font-display text-xl font-semibold text-charcoal sm:text-2xl">
+      {site_name}
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden gap-7 md:flex" aria-label="Primary">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-medium text-muted transition-colors hover:text-clay"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- Mobile navigation (no JavaScript needed) -->
+    <details class="relative md:hidden">
+      <summary
+        class="flex cursor-pointer list-none items-center gap-2 rounded-md border border-sand-300 px-3 py-2 text-sm font-medium text-charcoal marker:hidden"
+      >
+        Menu
+      </summary>
+      <nav
+        class="absolute right-0 mt-2 flex w-44 flex-col gap-1 rounded-lg border border-sand-200 bg-sand-50 p-2 shadow-lg"
+        aria-label="Primary mobile"
+      >
+        {
+          nav.map((item) => (
+            <a
+              href={item.href}
+              class="rounded px-3 py-2 text-sm font-medium text-charcoal hover:bg-sand-100"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </details>
+  </div>
+</header>

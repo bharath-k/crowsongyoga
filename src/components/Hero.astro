@@ -1,0 +1,36 @@
+---
+import { site } from '../lib/content';
+const { hero, location_short, media } = site;
+---
+
+<section id="top" class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img
+      src={media.hero_image}
+      alt=""
+      class="h-full w-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/25 to-sand-50"></div>
+  </div>
+
+  <div class="relative mx-auto flex max-w-6xl flex-col items-start px-5 py-28 sm:py-36 lg:py-44">
+    <span
+      class="mb-5 inline-block rounded-full bg-sand-50/85 px-4 py-1 text-sm font-medium tracking-wide text-clay-dark"
+    >
+      {location_short}
+    </span>
+    <h1 class="max-w-3xl text-4xl font-semibold leading-tight text-white drop-shadow-sm sm:text-5xl lg:text-6xl">
+      {hero.heading}
+    </h1>
+    <p class="mt-6 max-w-xl text-lg leading-relaxed text-sand-100 drop-shadow-sm">
+      {hero.subheading}
+    </p>
+    <a
+      href={hero.cta_href}
+      class="mt-9 inline-block rounded-full bg-clay px-7 py-3 text-base font-semibold text-white shadow-md transition-colors hover:bg-clay-dark"
+    >
+      {hero.cta_label}
+    </a>
+  </div>
+</section>

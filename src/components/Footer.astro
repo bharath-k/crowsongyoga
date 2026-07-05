@@ -1,0 +1,44 @@
+---
+import { site } from '../lib/content';
+const { site_name, footer, visit, nav } = site;
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-sand-200 bg-sand-50">
+  <div class="mx-auto max-w-6xl px-5 py-12">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <div class="max-w-sm">
+        <p class="font-display text-xl text-charcoal">{site_name}</p>
+        <p class="mt-3 text-sm leading-relaxed text-muted">{footer.tagline}</p>
+        <p class="mt-3 text-sm text-muted">{visit.address}</p>
+        {footer.note && <p class="mt-3 text-sm text-muted">{footer.note}</p>}
+        {
+          footer.social && footer.social.length > 0 && (
+            <div class="mt-4 flex flex-wrap gap-4">
+              {footer.social.map((s) => (
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-sm font-medium text-clay hover:text-clay-dark"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+      <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+        {
+          nav.map((item) => (
+            <a href={item.href} class="text-sm font-medium text-muted hover:text-clay">
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+    <p class="mt-10 text-xs text-muted">&copy; {year} {site_name}. All rights reserved.</p>
+  </div>
+</footer>

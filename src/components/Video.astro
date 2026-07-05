@@ -1,0 +1,36 @@
+---
+import { site } from '../lib/content';
+const { media } = site;
+const hasVideo = media.intro_video.trim().length > 0;
+---
+
+<section class="bg-sand-100/60 py-20 sm:py-24">
+  <div class="mx-auto max-w-4xl px-5 text-center">
+    <h2 class="text-3xl font-semibold text-charcoal sm:text-4xl">{media.intro_video_heading}</h2>
+
+    <div class="mt-8 overflow-hidden rounded-2xl border border-sand-200 shadow-sm">
+      {
+        hasVideo ? (
+          <video
+            class="h-full w-full"
+            controls
+            preload="none"
+            poster={media.intro_video_poster}
+          >
+            <source src={media.intro_video} />
+            Your browser does not support embedded video.
+          </video>
+        ) : (
+          <img
+            src={media.intro_video_poster}
+            alt="Video placeholder"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        )
+      }
+    </div>
+
+    {!hasVideo && <p class="mt-4 text-sm italic text-muted">{media.intro_video_caption}</p>}
+  </div>
+</section>

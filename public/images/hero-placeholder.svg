@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Hero image placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8dcc9"/>
+      <stop offset="1" stop-color="#d9c7ab"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <circle cx="800" cy="360" r="120" fill="none" stroke="#b0674c" stroke-width="6" opacity="0.6"/>
+  <circle cx="800" cy="360" r="60" fill="#b0674c" opacity="0.35"/>
+  <rect x="40" y="40" width="1520" height="820" fill="none" stroke="#8f4f38" stroke-width="4" stroke-dasharray="18 14" opacity="0.5"/>
+  <text x="800" y="580" font-family="Georgia, serif" font-size="46" fill="#8f4f38" text-anchor="middle">Hero image placeholder</text>
+  <text x="800" y="632" font-family="Arial, sans-serif" font-size="26" fill="#6b6157" text-anchor="middle">Replace: public/images/hero-placeholder.svg</text>
+</svg>

@@ -1,0 +1,49 @@
+---
+import { scheduleConfig } from '../lib/content';
+const configJson = JSON.stringify(scheduleConfig);
+---
+
+<div
+  id="today-banner"
+  data-config={configJson}
+  class="rounded-2xl border border-sand-300 bg-sand-100 px-6 py-5 shadow-sm"
+>
+  <p class="text-xs font-semibold uppercase tracking-widest text-clay-dark">Today at the shala</p>
+  <p id="today-banner-text" class="mt-2 font-display text-xl text-charcoal sm:text-2xl">
+    Open Monday to Friday, mornings - see the full schedule below.
+  </p>
+</div>
+
+<script>
+  import type { ScheduleConfig } from '../lib/schedule';
+  import { getVancouverDateStr, getBannerState, weekdayName } from '../lib/schedule';
+
+  const el = document.getElementById('today-banner');
+  const textEl = document.getElementById('today-banner-text');
+
+  if (el && textEl) {
+    const cfg = JSON.parse(el.dataset.config || '{}') as ScheduleConfig;
+    const today = getVancouverDateStr(new Date());
+    const day = weekdayName(today);
+    const state = getBannerState(today, cfg);
+
+    let message = '';
+    switch (state.status) {
+      case 'moon':
+        message = 'Today is a moon rest day - the shala is closed for rest.';
+        break;
+      case 'closed':
+        message = `The shala is closed today (${day}). See you soon.`;
+        break;
+      case 'saturday':
+        message = `Today (${day}): ${state.theme}.`;
+        break;
+      case 'open':
+        message = `Today (${day}): ${state.type}, ${state.time}.`;
+        break;
+    }
+
+    textEl.textContent = message;
+    el.dataset.status = state.status;
+  }
+</script>

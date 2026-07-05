@@ -1,0 +1,21 @@
+---
+import { site } from '../lib/content';
+const { consent } = site;
+---
+
+<section id="consent" class="bg-sage/10 py-20 sm:py-24">
+  <div class="mx-auto max-w-4xl px-5">
+    <h2 class="text-3xl font-semibold text-charcoal sm:text-4xl">{consent.heading}</h2>
+    <p class="mt-5 text-lg leading-relaxed text-muted">{consent.intro}</p>
+    <ul class="mt-8 space-y-4">
+      {
+        consent.points.map((point) => (
+          <li class="flex gap-3 rounded-xl border border-sand-200 bg-sand-50 p-5">
+            <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-sage"></span>
+            <span class="text-charcoal">{point}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
