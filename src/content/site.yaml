@@ -204,12 +204,15 @@ media:
   # Replace by dropping a file in public/images/ and updating the path here.
   hero_image: "/images/hero-placeholder.svg"
   practice_image: "/images/practice-placeholder.svg"
-  # Intro video: leave blank to show the poster placeholder only.
-  # When ready, drop a file in public/videos/ and set e.g. "/videos/intro.mp4".
-  intro_video: ""
-  intro_video_poster: "/images/video-poster-placeholder.svg"
   intro_video_heading: "A glimpse of the shala"
+  # Shown only if the videos list below is empty.
   intro_video_caption: "Video coming soon."
+  # Videos shown in the "glimpse of the shala" section. To add one: drop the
+  # video file in public/videos/ and a poster image in public/images/, then add
+  # a line below. Remove a line to take a video down. Caption is optional.
+  videos:
+    - { src: "/videos/practice-standing.mp4", poster: "/images/video-standing.jpg", caption: "" }
+    - { src: "/videos/practice-shoulderstand.mp4", poster: "/images/video-shoulderstand.jpg", caption: "" }
 
 # ---- Footer ------------------------------------------------------------------
 footer:

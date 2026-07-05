@@ -92,10 +92,9 @@ export interface SiteContent {
   media: {
     hero_image: string;
     practice_image: string;
-    intro_video: string;
-    intro_video_poster: string;
     intro_video_heading: string;
     intro_video_caption: string;
+    videos: { src: string; poster: string; caption?: string }[];
   };
   footer: {
     tagline: string;
