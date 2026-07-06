@@ -72,13 +72,23 @@ schedule:
   friday_anchor: { date: "2026-07-03", label: "LED Primary Series" }
 
   # Saturdays: only list the ones that actually run. Add a line per date.
-  # Therapeutic practice runs every second Saturday, 6:00 - 8:00 am.
-  # NOTE: please replace the example dates below with the real Saturdays.
+  # The practice runs every second Saturday, 6:00 - 8:00 am, starting 2026-07-11.
+  # Edit a theme to describe a specific Saturday; add or remove lines as needed.
   saturday_note: "Every second Saturday we gather for therapeutic yoga practices, 6:00 - 8:00 am, with a specific focus for your health and wellbeing."
   saturday_themes:
-    - { date: "2026-07-18", theme: "Therapeutic practice - a focus for your health and wellbeing" }
-    - { date: "2026-08-01", theme: "Therapeutic practice - a focus for your health and wellbeing" }
-    - { date: "2026-08-15", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-07-11", theme: "Bhagavad Gita inspired yoga practice" }
+    - { date: "2026-07-25", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-08-08", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-08-22", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-09-05", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-09-19", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-10-03", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-10-17", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-10-31", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-11-14", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-11-28", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-12-12", theme: "Therapeutic practice - a focus for your health and wellbeing" }
+    - { date: "2026-12-26", theme: "Therapeutic practice - a focus for your health and wellbeing" }
 
   closed_note: "The shala is closed on Sundays."
 
