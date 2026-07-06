@@ -220,5 +220,5 @@ footer:
   note: ""
   # Social links shown in the footer. Update the url/handle or remove a line.
   social:
-    - { label: "Instagram", handle: "@christine.ashtanga", url: "https://instagram.com/christine.ashtanga" }
+    - { label: "Instagram", handle: "@christineashtanga", url: "https://instagram.com/christineashtanga" }
     - { label: "YouTube", handle: "@christinewhite-n4r", url: "https://youtube.com/@christinewhite-n4r" }
