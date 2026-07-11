@@ -6,11 +6,11 @@ import TodayBanner from './TodayBanner.astro';
 const { schedule } = site;
 
 const weekdays = [
-  { name: 'Monday', session: schedule.days.monday },
-  { name: 'Tuesday', session: schedule.days.tuesday },
-  { name: 'Wednesday', session: schedule.days.wednesday },
-  { name: 'Thursday', session: schedule.days.thursday },
-  { name: 'Friday', session: schedule.days.friday },
+  { name: 'Monday', wd: 1, session: schedule.days.monday },
+  { name: 'Tuesday', wd: 2, session: schedule.days.tuesday },
+  { name: 'Wednesday', wd: 3, session: schedule.days.wednesday },
+  { name: 'Thursday', wd: 4, session: schedule.days.thursday },
+  { name: 'Friday', wd: 5, session: schedule.days.friday },
 ];
 
 function formatDate(dateStr: string): string {
@@ -36,15 +36,22 @@ const upcomingMoonDays = schedule.moon_rest_days.filter((d) => d >= today).slice
       <TodayBanner />
     </div>
 
-    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+    <div
+      id="weekday-grid"
+      data-moon-days={JSON.stringify(schedule.moon_rest_days)}
+      class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5"
+    >
       {
         weekdays.map((d) => (
-          <div class="flex flex-col rounded-xl border border-sand-200 bg-sand-50 p-5">
+          <div
+            data-weekday={d.wd}
+            class="flex flex-col rounded-xl border border-sand-200 bg-sand-50 p-5"
+          >
             <span class="font-display text-xl text-charcoal">{d.name}</span>
-            <span class="mt-2 text-sm font-semibold text-clay-dark">{d.session.time}</span>
-            <span class="mt-2 text-sm leading-relaxed text-muted">{d.session.type}</span>
+            <span class="day-time mt-2 text-sm font-semibold text-clay-dark">{d.session.time}</span>
+            <span class="day-type mt-2 text-sm leading-relaxed text-muted">{d.session.type}</span>
             {d.name === 'Friday' && (
-              <span class="mt-3 text-xs italic text-sage">Alternates weekly</span>
+              <span class="alternates-note mt-3 text-xs italic text-sage">Alternates weekly</span>
             )}
           </div>
         ))
@@ -101,3 +108,29 @@ const upcomingMoonDays = schedule.moon_rest_days.filter((d) => d >= today).slice
     <p class="mt-8 text-sm italic text-muted">{schedule.closed_note}</p>
   </div>
 </section>
+
+<script>
+  import { getVancouverDateStr, nextWeekdayDate } from '../lib/schedule';
+
+  const grid = document.getElementById('weekday-grid');
+  if (grid) {
+    const moonDays: string[] = JSON.parse(grid.dataset.moonDays || '[]');
+    const today = getVancouverDateStr(new Date());
+    grid.querySelectorAll<HTMLElement>('[data-weekday]').forEach((card) => {
+      const date = nextWeekdayDate(today, Number(card.dataset.weekday));
+      if (!moonDays.includes(date)) return;
+      card.style.borderColor = 'var(--color-clay)';
+      card.style.backgroundColor = 'var(--color-sand-100)';
+      const typeEl = card.querySelector<HTMLElement>('.day-type');
+      if (typeEl) {
+        typeEl.textContent = 'Moon day - take rest';
+        typeEl.style.color = 'var(--color-clay-dark)';
+        typeEl.style.fontWeight = '600';
+      }
+      const timeEl = card.querySelector<HTMLElement>('.day-time');
+      if (timeEl) timeEl.textContent = 'No class';
+      const altEl = card.querySelector<HTMLElement>('.alternates-note');
+      if (altEl) altEl.style.display = 'none';
+    });
+  }
+</script>

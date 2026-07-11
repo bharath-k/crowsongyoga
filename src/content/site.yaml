@@ -59,8 +59,8 @@ schedule:
   # Times and descriptions for each weekday.
   days:
     monday:    { time: "6:00 - 8:15 am", type: "Open Practice (no teacher present)" }
-    tuesday:   { time: "5:45 - 8:15 am", type: "Moon Day - Take Rest" }
-    wednesday: { time: "5:45 - 8:15 am", type: "Mysore Practice (teacher facilitated)" }
+    tuesday:   { time: "5:45 - 8:15 am", type: "Mysore Practice (teacher facilitated)" }
+    wednesday: { time: "5:45 - 8:15 am", type: "Open Practice" }
     thursday:  { time: "5:45 - 8:15 am", type: "Open Practice" }
     friday:    { time: "6:00 - 8:00 am", type: "LED Primary Series / Asana Skill Development + Pranayama" }
 
@@ -159,7 +159,12 @@ teacher:
     - "AJNA Yoga College - 300-hour Advanced Teacher of Yoga (March 2026)"
     - "David Garrigues - Ashtanga Vinyasa Yoga Certification, 6-month (March - Sept 2026)"
     - "David Garrigues - 70 hours (Aug 2026, New Mexico)"
-  membership: "Member of the Canadian Yoga Alliance - CYA-RYT 500 (April 2026)"
+  # Highlighted qualifications shown as prominent badges near the top of the
+  # bio. The full list stays in `credentials` below (the expandable section).
+  highlights:
+    - "David Garrigues - Ashtanga Vinyasa Yoga Certification, 6-month (March - Sept 2026)"
+    - "AJNA Yoga College - IAYT Yoga Therapy (Feb 2024 - present)"
+    - "Member of the Canadian Yoga Alliance - CYA-RYT 500 (April 2026)"
   # Replace the placeholder image by dropping a photo in public/images/ and
   # pointing this to it, e.g. "/images/teacher.jpg".
   image: "/images/teacher.jpg"
@@ -174,6 +179,7 @@ rates:
   # "coming soon". cta_label is the wording shown on the button.
   items:
     - { name: "Drop-in", price: "$35", note: "A single morning practice", cta_label: "Pay drop-in", checkout_url: "" }
+    - { name: "New student intro", price: "$80", note: "Your first month of unlimited practice, for new students", cta_label: "Start first month", checkout_url: "" }
     - { name: "One month unlimited", price: "$150 / month", note: "Practise as often as you like", cta_label: "Start monthly", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/WLS2FW5PQM66LUUKZSUQXCD5" }
   footnote: "Prices are in Canadian dollars, plus 5% GST. Please ask about need-based options."
 

@@ -60,7 +60,7 @@ export interface SiteContent {
     bio: string;
     credentials_heading?: string;
     credentials?: string[];
-    membership?: string;
+    highlights?: string[];
     image: string;
     image_alt: string;
   };

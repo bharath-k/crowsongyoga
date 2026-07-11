@@ -5,6 +5,7 @@ import {
   getSaturdayTheme,
   getVancouverDateStr,
   isMoonRestDay,
+  nextWeekdayDate,
   weekdayIndex,
   weekdayName,
   type ScheduleConfig,
@@ -34,6 +35,25 @@ describe('weekday helpers', () => {
   it('returns the weekday name', () => {
     expect(weekdayName('2026-07-03')).toBe('Friday');
     expect(weekdayName('2026-07-11')).toBe('Saturday');
+  });
+});
+
+describe('nextWeekdayDate', () => {
+  it('returns the same date when the weekday matches', () => {
+    // 2026-07-13 is a Monday.
+    expect(nextWeekdayDate('2026-07-13', 1)).toBe('2026-07-13');
+  });
+
+  it('finds the upcoming weekday within the current week', () => {
+    // From Monday 2026-07-13, the coming Tuesday is 2026-07-14.
+    expect(nextWeekdayDate('2026-07-13', 2)).toBe('2026-07-14');
+    // ...and the coming Friday is 2026-07-17.
+    expect(nextWeekdayDate('2026-07-13', 5)).toBe('2026-07-17');
+  });
+
+  it('wraps into next week for weekdays already passed', () => {
+    // From Wednesday 2026-07-15, the next Tuesday is 2026-07-21.
+    expect(nextWeekdayDate('2026-07-15', 2)).toBe('2026-07-21');
   });
 });
 

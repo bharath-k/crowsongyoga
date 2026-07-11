@@ -56,6 +56,17 @@ export function weekdayName(dateStr: string): string {
   return WEEKDAY_NAMES[weekdayIndex(dateStr)];
 }
 
+// The date (YYYY-MM-DD) of the next occurrence of `targetWeekday`
+// (0 = Sunday ... 6 = Saturday) on or within the next six days of `fromDateStr`
+// (so the same weekday returns `fromDateStr` itself). Used to work out which
+// calendar date each weekday column represents in the current week.
+export function nextWeekdayDate(fromDateStr: string, targetWeekday: number): string {
+  const offset = (((targetWeekday - weekdayIndex(fromDateStr)) % 7) + 7) % 7;
+  const d = new Date(`${fromDateStr}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + offset);
+  return d.toISOString().slice(0, 10);
+}
+
 // Today's date in Vancouver as YYYY-MM-DD, regardless of the visitor's location.
 export function getVancouverDateStr(now: Date = new Date()): string {
   // en-CA formats dates as YYYY-MM-DD.
