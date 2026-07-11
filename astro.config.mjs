@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// Update `site` to your final Netlify (or custom) URL when you deploy.
+// `site` is the public address of the website, used for canonical URLs.
 export default defineConfig({
-  site: 'https://your-shala.netlify.app',
+  site: 'https://crowsongyoga.ca',
   vite: {
     plugins: [tailwindcss()],
   },
