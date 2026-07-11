@@ -212,8 +212,8 @@ visit:
 # ---- Media (images & video placeholders you can replace later) ---------------
 media:
   # Replace by dropping a file in public/images/ and updating the path here.
-  hero_image: "/images/hero-placeholder.svg"
-  practice_image: "/images/practice-placeholder.svg"
+  hero_image: "/images/hero.jpg"
+  practice_image: "/images/practice.jpg"
   intro_video_heading: "A glimpse of the shala"
   # Shown only if the videos list below is empty.
   intro_video_caption: "Video coming soon."
