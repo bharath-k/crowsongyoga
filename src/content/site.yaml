@@ -162,7 +162,7 @@ teacher:
   membership: "Member of the Canadian Yoga Alliance - CYA-RYT 500 (April 2026)"
   # Replace the placeholder image by dropping a photo in public/images/ and
   # pointing this to it, e.g. "/images/teacher.jpg".
-  image: "/images/teacher-placeholder.svg"
+  image: "/images/teacher.jpg"
   image_alt: "Portrait of christine white"
 
 # ---- Rates -------------------------------------------------------------------
