@@ -59,8 +59,8 @@ schedule:
   # Times and descriptions for each weekday.
   days:
     monday:    { time: "6:00 - 8:15 am", type: "Open Practice (no teacher present)" }
-    tuesday:   { time: "5:45 - 8:15 am", type: "Mysore Practice (teacher facilitated)" }
-    wednesday: { time: "5:45 - 8:15 am", type: "Open Practice" }
+    tuesday:   { time: "5:45 - 8:15 am", type: "Open Practice" }
+    wednesday: { time: "5:45 - 8:15 am", type: "Mysore Practice (teacher facilitated)" }
     thursday:  { time: "5:45 - 8:15 am", type: "Open Practice" }
     friday:    { time: "6:00 - 8:00 am", type: "LED Primary Series / Asana Skill Development + Pranayama" }
 
