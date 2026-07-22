@@ -178,8 +178,8 @@ rates:
   # into checkout_url between the quotes. Until then the button shows
   # "coming soon". cta_label is the wording shown on the button.
   items:
-    - { name: "Drop-in", price: "$35", note: "A single morning practice", cta_label: "Pay drop-in", checkout_url: "" }
-    - { name: "New student intro", price: "$80", note: "Your first month of unlimited practice, for new students", cta_label: "Start first month", checkout_url: "" }
+    - { name: "Drop-in", price: "$35", note: "A single morning practice", cta_label: "Pay drop-in", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/OELWHLYNFAAA54JFOOM343YL" }
+    - { name: "New student intro", price: "$80", note: "Your first month of unlimited practice, for new students", cta_label: "Start first month", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/K5KLABWCFBX4UDQEHYK7BNGA" }
     - { name: "One month unlimited", price: "$150 / month", note: "Practise as often as you like", cta_label: "Start monthly", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/WLS2FW5PQM66LUUKZSUQXCD5" }
   footnote: "Prices are in Canadian dollars, plus 5% GST. Please ask about need-based options."
 
@@ -210,7 +210,7 @@ visit:
   intro: "New students are warmly welcomed. Come as you are, and say hello."
   address: "156 E 7th Ave, Vancouver, BC V5T 1M5"
   directions: "Near Main St, a short walk from the Mount Pleasant neighbourhood."
-  email: ""                            # left off for now; add a real email later
+  email: "hello@crowsongyoga.ca"       # shala contact email
   phone: ""                            # intentionally left blank
   # Google Maps embed for the address above (no API key needed).
   map_embed: "https://maps.google.com/maps?q=156%20E%207th%20Ave%2C%20Vancouver%2C%20BC%20V5T%201M5&t=&z=15&ie=UTF8&iwloc=&output=embed"
