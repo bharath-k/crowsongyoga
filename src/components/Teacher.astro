@@ -3,10 +3,10 @@ import { site } from '../lib/content';
 const { teacher } = site;
 ---
 
-<section id="teacher" class="mx-auto max-w-6xl px-5 py-20 sm:py-24">
-  <div class="grid items-start gap-12 lg:grid-cols-[2fr_3fr]">
+<section id="teacher" class="mx-auto max-w-6xl px-5 pt-20 pb-8 sm:pt-24 sm:pb-10">
+  <div class="grid items-stretch gap-12 lg:grid-cols-[2fr_3fr]">
     <div class="overflow-hidden rounded-2xl border border-sand-200 shadow-sm">
-      <img src={teacher.image} alt={teacher.image_alt} class="h-full w-full object-cover" loading="lazy" />
+      <img src={teacher.image} alt={teacher.image_alt} class="h-full min-h-72 w-full object-cover" loading="lazy" />
     </div>
     <div>
       <h2 class="text-3xl font-semibold text-charcoal sm:text-4xl">{teacher.heading}</h2>

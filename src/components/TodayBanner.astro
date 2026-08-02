@@ -32,6 +32,9 @@ const configJson = JSON.stringify(scheduleConfig);
       case 'moon':
         message = 'Today is a moon rest day - the shala is closed for rest.';
         break;
+      case 'holiday':
+        message = `The shala is closed today for ${state.name}.`;
+        break;
       case 'closed':
         message = `The shala is closed today (${day}). See you soon.`;
         break;

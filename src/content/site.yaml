@@ -38,7 +38,7 @@ hero:
 practice:
   heading: "The Practice"
   intro: >-
-    We practise Ashtanga Vinyasa Yoga (Primary and Intermediate Series) in a
+    We practice Ashtanga Vinyasa Yoga (Primary and Intermediate Series) in a
     cozy shala at 156 E 7th Ave, Vancouver. We meet in the early hours,
     5:45 - 8:15 am, Monday to Friday, and every second Saturday. Alongside the
     asana practice, you'll learn pranayama and therapeutic techniques to support
@@ -97,7 +97,7 @@ schedule:
   # the link (choose Vancouver, and add both Full Moon and New Moon dates).
   moon_note: >-
     Full and New Moon days are observed as rest days, when the shala does not
-    operate. They mark the peak and trough of the monthly cycle, and we honour
+    operate. They mark the peak and trough of the monthly cycle, and we honor
     them with rest.
   moon_days_link: "https://www.timeanddate.com/moon/phases/canada/vancouver"
   moon_rest_days:
@@ -127,14 +127,31 @@ schedule:
     - "2026-12-08"   # New Moon
     - "2026-12-23"   # Full Moon
 
+  # Public / statutory holidays in British Columbia. The shala is closed on
+  # these days. Update this list each year. The dates drive the "Today" banner
+  # and the weekday highlighting; the names are shown on the site.
+  holiday_note: "The shala is also closed on British Columbia statutory holidays."
+  holiday_rest_days:
+    - { date: "2026-01-01", name: "New Year's Day" }
+    - { date: "2026-02-16", name: "Family Day" }
+    - { date: "2026-04-03", name: "Good Friday" }
+    - { date: "2026-05-18", name: "Victoria Day" }
+    - { date: "2026-07-01", name: "Canada Day" }
+    - { date: "2026-08-03", name: "BC Day" }
+    - { date: "2026-09-07", name: "Labour Day" }
+    - { date: "2026-09-30", name: "National Day for Truth and Reconciliation" }
+    - { date: "2026-10-12", name: "Thanksgiving" }
+    - { date: "2026-11-11", name: "Remembrance Day" }
+    - { date: "2026-12-25", name: "Christmas Day" }
+
 # ---- Teacher -----------------------------------------------------------------
 teacher:
   heading: "Your Teacher"
   name: "christine white"
   title: "Ashtanga Vinyasa Yoga (Mysore style) & Therapeutic Yoga"
   bio: >-
-    I'm christine. I've practised yoga for many years, and began Ashtanga
-    Vinyasa in 2016. In 2018 I met Geoff MacKenzie and started practising at
+    I'm christine. I've practiced yoga for many years, and began Ashtanga
+    Vinyasa in 2016. In 2018 I met Geoff MacKenzie and started practicing at
     First Light Yoga. I completed my 300-hour Ashtanga Yoga Teacher Training in
     2022, then went on to assist and teach at First Light through 2026. Today I
     teach Ashtanga Vinyasa in the Mysore style alongside therapeutic yoga, and
@@ -170,17 +187,34 @@ teacher:
   image: "/images/teacher.jpg"
   image_alt: "Portrait of christine white"
 
+# ---- Kind words (short quotes from students) --------------------------------
+# A few words from people who practice at the shala. Add, edit or remove an
+# entry below. Keep each quote in "double quotes" and keep the two labels
+# (quote: and name:) exactly as they are.
+kind_words:
+  heading: "Kind words"
+  intro: "A few reflections from people who practice at the shala."
+  items:
+    - quote: "Christine is a lovely teacher. Gentle, kind and a wealth of information. Her adjustments are wonderful."
+      name: "Carina R"
+    - quote: "I began practicing Ashtanga with Christine about a year ago. She teaches the person in front of her, adjusting to what my body needs that day. A year on, I've gone from struggling with the basics to a steady headstand, built slowly and safely, one patient step at a time."
+      name: "Bharath K"
+    - quote: "Christine is always welcoming and supportive. She holds the space for her students and supports each of us individually. It's a great way to start the day, coming to the shala and practicing together with like-minded people."
+      name: "Sherry H"
+    - quote: "Thank you for your skill, patience, and support in helping me work through my injuries so I could keep training for my marathon. It truly made a difference."
+      name: "Kelly K"
+
 # ---- Rates -------------------------------------------------------------------
 rates:
   heading: "Rates"
-  intro: "Simple, honest pricing. Practise as little or as often as you like."
+  intro: "Simple, honest pricing. Practice as little or as often as you like."
   # For each item: when you have a Square (or other) checkout link, paste it
   # into checkout_url between the quotes. Until then the button shows
   # "coming soon". cta_label is the wording shown on the button.
   items:
     - { name: "Drop-in", price: "$35", note: "A single morning practice", cta_label: "Pay drop-in", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/OELWHLYNFAAA54JFOOM343YL" }
     - { name: "New student intro", price: "$80", note: "Your first month of unlimited practice, for new students", cta_label: "Start first month", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/K5KLABWCFBX4UDQEHYK7BNGA" }
-    - { name: "One month unlimited", price: "$150 / month", note: "Practise as often as you like", cta_label: "Start monthly", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/WLS2FW5PQM66LUUKZSUQXCD5" }
+    - { name: "One month unlimited", price: "$150 / month", note: "Practice as often as you like", cta_label: "Start monthly", checkout_url: "https://checkout.square.site/merchant/MLNBT2S011XBA/checkout/WLS2FW5PQM66LUUKZSUQXCD5" }
   footnote: "Prices are in Canadian dollars, plus 5% GST. Please ask about need-based options."
 
 # ---- Consent & Safety --------------------------------------------------------
@@ -209,7 +243,7 @@ visit:
   heading: "Visit"
   intro: "New students are warmly welcomed. Come as you are, and say hello."
   address: "156 E 7th Ave, Vancouver, BC V5T 1M5"
-  directions: "Near Main St, a short walk from the Mount Pleasant neighbourhood."
+  directions: "Near Main St, a short walk from the Mount Pleasant neighborhood."
   email: "hello@crowsongyoga.ca"       # shala contact email
   phone: ""                            # intentionally left blank
   # Google Maps embed for the address above (no API key needed).

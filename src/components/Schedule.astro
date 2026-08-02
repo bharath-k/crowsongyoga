@@ -25,6 +25,7 @@ function formatDate(dateStr: string): string {
 const today = getVancouverDateStr();
 const upcomingThemes = schedule.saturday_themes.filter((t) => t.date >= today).slice(0, 4);
 const upcomingMoonDays = schedule.moon_rest_days.filter((d) => d >= today).slice(0, 6);
+const upcomingHolidays = schedule.holiday_rest_days.filter((h) => h.date >= today).slice(0, 4);
 ---
 
 <section id="schedule" class="bg-sand-100/60 py-20 sm:py-24">
@@ -39,6 +40,7 @@ const upcomingMoonDays = schedule.moon_rest_days.filter((d) => d >= today).slice
     <div
       id="weekday-grid"
       data-moon-days={JSON.stringify(schedule.moon_rest_days)}
+      data-holiday-days={JSON.stringify(schedule.holiday_rest_days)}
       class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5"
     >
       {
@@ -102,6 +104,21 @@ const upcomingMoonDays = schedule.moon_rest_days.filter((d) => d >= today).slice
         >
           See all moon days &rarr;
         </a>
+
+        <div class="mt-5 border-t border-sand-200 pt-5">
+          <p class="text-sm text-muted">{schedule.holiday_note}</p>
+          {
+            upcomingHolidays.length > 0 && (
+              <ul class="mt-3 space-y-1.5">
+                {upcomingHolidays.map((h) => (
+                  <li class="text-sm text-muted">
+                    <span class="font-semibold text-charcoal">{formatDate(h.date)}</span> - {h.name}
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+        </div>
       </div>
     </div>
 
@@ -115,15 +132,17 @@ const upcomingMoonDays = schedule.moon_rest_days.filter((d) => d >= today).slice
   const grid = document.getElementById('weekday-grid');
   if (grid) {
     const moonDays: string[] = JSON.parse(grid.dataset.moonDays || '[]');
+    const holidayDays: { date: string; name: string }[] = JSON.parse(
+      grid.dataset.holidayDays || '[]'
+    );
     const today = getVancouverDateStr(new Date());
-    grid.querySelectorAll<HTMLElement>('[data-weekday]').forEach((card) => {
-      const date = nextWeekdayDate(today, Number(card.dataset.weekday));
-      if (!moonDays.includes(date)) return;
+
+    const markRest = (card: HTMLElement, label: string) => {
       card.style.borderColor = 'var(--color-clay)';
       card.style.backgroundColor = 'var(--color-sand-100)';
       const typeEl = card.querySelector<HTMLElement>('.day-type');
       if (typeEl) {
-        typeEl.textContent = 'Moon day - take rest';
+        typeEl.textContent = label;
         typeEl.style.color = 'var(--color-clay-dark)';
         typeEl.style.fontWeight = '600';
       }
@@ -131,6 +150,18 @@ const upcomingMoonDays = schedule.moon_rest_days.filter((d) => d >= today).slice
       if (timeEl) timeEl.textContent = 'No class';
       const altEl = card.querySelector<HTMLElement>('.alternates-note');
       if (altEl) altEl.style.display = 'none';
+    };
+
+    grid.querySelectorAll<HTMLElement>('[data-weekday]').forEach((card) => {
+      const date = nextWeekdayDate(today, Number(card.dataset.weekday));
+      if (moonDays.includes(date)) {
+        markRest(card, 'Moon day - take rest');
+        return;
+      }
+      const holiday = holidayDays.find((h) => h.date === date);
+      if (holiday) {
+        markRest(card, `Closed - ${holiday.name}`);
+      }
     });
   }
 </script>

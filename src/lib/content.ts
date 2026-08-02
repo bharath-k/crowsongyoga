@@ -3,7 +3,7 @@
 // both in dev and in the bundled production build.
 import yaml from 'js-yaml';
 import rawSiteYaml from '../content/site.yaml?raw';
-import type { DaySession, SaturdayTheme, ScheduleConfig } from './schedule';
+import type { DaySession, HolidayRest, SaturdayTheme, ScheduleConfig } from './schedule';
 
 export interface NavItem {
   label: string;
@@ -16,6 +16,11 @@ export interface RateItem {
   note?: string;
   cta_label?: string;
   checkout_url?: string;
+}
+
+export interface Quote {
+  quote: string;
+  name: string;
 }
 
 export interface SiteContent {
@@ -52,6 +57,8 @@ export interface SiteContent {
     moon_note: string;
     moon_days_link: string;
     moon_rest_days: string[];
+    holiday_note: string;
+    holiday_rest_days: HolidayRest[];
   };
   teacher: {
     heading: string;
@@ -63,6 +70,11 @@ export interface SiteContent {
     highlights?: string[];
     image: string;
     image_alt: string;
+  };
+  kind_words: {
+    heading: string;
+    intro?: string;
+    items: Quote[];
   };
   rates: {
     heading: string;
@@ -112,4 +124,5 @@ export const scheduleConfig: ScheduleConfig = {
   fridayAnchor: site.schedule.friday_anchor,
   saturdayThemes: site.schedule.saturday_themes,
   moonRestDays: site.schedule.moon_rest_days,
+  holidayRestDays: site.schedule.holiday_rest_days,
 };

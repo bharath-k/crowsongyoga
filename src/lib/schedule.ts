@@ -11,6 +11,11 @@ export interface SaturdayTheme {
   theme: string;
 }
 
+export interface HolidayRest {
+  date: string; // YYYY-MM-DD
+  name: string;
+}
+
 export interface ScheduleConfig {
   days: {
     monday: DaySession;
@@ -23,10 +28,12 @@ export interface ScheduleConfig {
   fridayAnchor: { date: string; label: string };
   saturdayThemes: SaturdayTheme[];
   moonRestDays: string[];
+  holidayRestDays: HolidayRest[];
 }
 
 export type BannerState =
   | { status: 'moon' }
+  | { status: 'holiday'; name: string }
   | { status: 'closed' }
   | { status: 'saturday'; theme: string }
   | { status: 'open'; time: string; type: string };
@@ -82,6 +89,16 @@ export function isMoonRestDay(dateStr: string, cfg: ScheduleConfig): boolean {
   return cfg.moonRestDays.includes(dateStr);
 }
 
+export function isHolidayRestDay(dateStr: string, cfg: ScheduleConfig): boolean {
+  return cfg.holidayRestDays.some((h) => h.date === dateStr);
+}
+
+// The name of the public holiday on a given date, or null if it isn't one.
+export function getHolidayName(dateStr: string, cfg: ScheduleConfig): string | null {
+  const match = cfg.holidayRestDays.find((h) => h.date === dateStr);
+  return match ? match.name : null;
+}
+
 // Which of the two Friday offerings falls on the given date.
 export function getFridayLabel(dateStr: string, cfg: ScheduleConfig): string {
   const [a, b] = cfg.fridayAlternates;
@@ -101,6 +118,11 @@ export function getSaturdayTheme(dateStr: string, cfg: ScheduleConfig): string |
 export function getBannerState(dateStr: string, cfg: ScheduleConfig): BannerState {
   if (isMoonRestDay(dateStr, cfg)) {
     return { status: 'moon' };
+  }
+
+  const holidayName = getHolidayName(dateStr, cfg);
+  if (holidayName) {
+    return { status: 'holiday', name: holidayName };
   }
 
   const wd = weekdayIndex(dateStr);

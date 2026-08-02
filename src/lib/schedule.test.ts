@@ -2,8 +2,10 @@ import { describe, expect, it } from 'vitest';
 import {
   getBannerState,
   getFridayLabel,
+  getHolidayName,
   getSaturdayTheme,
   getVancouverDateStr,
+  isHolidayRestDay,
   isMoonRestDay,
   nextWeekdayDate,
   weekdayIndex,
@@ -23,6 +25,7 @@ const cfg: ScheduleConfig = {
   fridayAnchor: { date: '2026-07-03', label: 'Guided Practice' },
   saturdayThemes: [{ date: '2026-07-11', theme: 'Bhagavad Gita focused practice' }],
   moonRestDays: ['2026-07-14', '2026-07-29'],
+  holidayRestDays: [{ date: '2026-08-03', name: 'BC Day' }],
 };
 
 describe('weekday helpers', () => {
@@ -91,10 +94,29 @@ describe('isMoonRestDay', () => {
   });
 });
 
+describe('isHolidayRestDay', () => {
+  it('detects statutory holiday rest days', () => {
+    expect(isHolidayRestDay('2026-08-03', cfg)).toBe(true);
+    expect(isHolidayRestDay('2026-08-04', cfg)).toBe(false);
+  });
+});
+
+describe('getHolidayName', () => {
+  it('returns the holiday name or null', () => {
+    expect(getHolidayName('2026-08-03', cfg)).toBe('BC Day');
+    expect(getHolidayName('2026-08-04', cfg)).toBeNull();
+  });
+});
+
 describe('getBannerState', () => {
   it('prioritises moon rest days over the weekday schedule', () => {
     // 2026-07-14 is a Tuesday but also a moon rest day.
     expect(getBannerState('2026-07-14', cfg)).toEqual({ status: 'moon' });
+  });
+
+  it('prioritises statutory holidays over the weekday schedule', () => {
+    // 2026-08-03 (BC Day) is a Monday.
+    expect(getBannerState('2026-08-03', cfg)).toEqual({ status: 'holiday', name: 'BC Day' });
   });
 
   it('reports Sundays as closed', () => {
